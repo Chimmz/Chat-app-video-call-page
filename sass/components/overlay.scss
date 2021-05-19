@@ -12,6 +12,10 @@
       // background: transparent !important;
    }
 
+   &--higher {
+      z-index: 50;
+   }
+
    &--hidden {
       display: none;
    }

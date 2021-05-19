@@ -14,9 +14,10 @@
 .btn {
   font: inherit;
   font-size: 1.4rem;
-  padding: 0.3em 0.7em;
-  border-radius: 0.3em;
+  padding: 0.7em 1em;
+  border-radius: 0.4em;
   border: none;
+  background: none;
   transition: all 0.2s;
 }
 .btn:hover, .btn:active, .btn:focus {
@@ -29,6 +30,20 @@
 }
 .btn-primary:hover {
   background: #14a8e7;
+}
+.btn-white {
+  background: #fff;
+  color: #07b2fa;
+}
+.btn-white:hover {
+  color: #0076a7;
+}
+.btn-text-white {
+  color: #fff;
+}
+.btn-md {
+  padding: 0.3em 0.7em;
+  border-radius: 0.3em;
 }
 
 .navbar {
@@ -164,14 +179,14 @@
   transform: translate(-50%, -50%);
   background: #fff;
   border-radius: 2rem;
-  box-shadow: 0 0 1rem 50vh rgba(0, 0, 0, 0.4);
-  z-index: 51;
+  box-shadow: 0 0 2rem 50vh rgba(0, 0, 0, 0.4);
   padding: 1.7rem;
-  padding-left: 7rem;
+  padding-left: 6rem;
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 1.7rem;
   transition: width height 0.5s;
+  z-index: 41;
 }
 .videocall-modal--fullscreen {
   width: 100%;
@@ -189,15 +204,6 @@
   opacity: 0.5;
   cursor: pointer;
 }
-.videocall__tab-nav i {
-  cursor: pointer;
-}
-.videocall__tab-nav i:hover {
-  color: orange;
-}
-.videocall__tab-nav .tab-close {
-  font-size: 2rem;
-}
 .videocall__chats-and-attendees {
   flex: 1 1 35%;
   height: 100%;
@@ -210,10 +216,73 @@
   color: #312a2a;
   margin-bottom: 2rem;
 }
+.videocall__chats-and-attendees-nav {
+  position: absolute;
+  left: -0.4em;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-left: 2px solid #ecf3f6;
+  border-top: 2px solid #ecf3f6;
+  border-bottom: 2px solid #ecf3f6;
+  border-radius: 1.5rem;
+  padding: 1.5em 0;
+  font-size: 1.75rem;
+  color: #948d8d;
+}
+.videocall__chats-and-attendees-nav > * {
+  position: relative;
+  right: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+  border-right: 2px solid #ecf3f6;
+}
+.videocall__chats-and-attendees-nav > *:hover {
+  color: #07b2fa;
+  background: #f6f6f6;
+}
+.videocall__chats-and-attendees-nav > *.chats::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 50%;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: #ff0000;
+  font-size: 1em;
+}
+.videocall__chats-and-attendees-nav > *.attendees {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.videocall__chats-and-attendees-nav > *.attendees .total {
+  font-size: 0.6em;
+}
+.videocall__chats-and-attendees-nav > *.attendees i {
+  font-size: 1em;
+}
+.videocall__chats-and-attendees-nav .nav-item--active {
+  color: #07b2fa;
+  border-right: 2px solid #07b2fa;
+}
 .videocall__chats {
   height: 80%;
   padding: 2rem 1rem;
   overflow-y: scroll;
+}
+.videocall__chats::-webkit-scrollbar {
+  width: 0.7rem;
+  display: none;
+}
+.videocall__chats:hover::-webkit-scrollbar-thumb {
+  background: #948d8d;
+  border-radius: 99rem;
+  display: inline-block;
 }
 .videocall__chats .newmsg {
   position: absolute;
@@ -254,6 +323,14 @@
 }
 .videocall__attendees > *:not(:last-child) {
   border-bottom: 1px solid #cde7f2;
+}
+.videocall__attendees::-webkit-scrollbar {
+  width: 0.7rem;
+}
+.videocall__attendees:hover::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 99rem;
+  margin: 5rem;
 }
 .videocall__attendee {
   display: flex;
@@ -328,7 +405,12 @@
   grid-auto-rows: 15rem;
   gap: 1px;
   overflow-y: scroll;
+  border-radius: 1rem;
+  background: #948d8d;
   position: relative;
+}
+.videocall__call__allparticipants::-webkit-scrollbar {
+  display: none;
 }
 .videocall__call--peer-to-peer .videocall__participant--peer {
   width: 100%;
@@ -416,7 +498,7 @@
   right: 100%;
   background: #fff;
   z-index: 41;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0.5rem 3px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   padding: 5px 0;
   display: none;
@@ -425,8 +507,9 @@
 }
 .videocall__call__more-actions .videocall__call__option {
   display: flex;
-  width: max-content;
-  padding: 0.5em 1.5em;
+  width: 100%;
+  min-width: max-content;
+  padding: 0.6em 1.5em;
   cursor: pointer;
 }
 .videocall__call__more-actions .videocall__call__option:hover {
@@ -536,9 +619,10 @@
 .btn {
   font: inherit;
   font-size: 1.4rem;
-  padding: 0.3em 0.7em;
-  border-radius: 0.3em;
+  padding: 0.7em 1em;
+  border-radius: 0.4em;
   border: none;
+  background: none;
   transition: all 0.2s;
 }
 .btn:hover, .btn:active, .btn:focus {
@@ -552,6 +636,102 @@
 .btn-primary:hover {
   background: #14a8e7;
 }
+.btn-white {
+  background: #fff;
+  color: #07b2fa;
+}
+.btn-white:hover {
+  color: #0076a7;
+}
+.btn-text-white {
+  color: #fff;
+}
+.btn-md {
+  padding: 0.3em 0.7em;
+  border-radius: 0.3em;
+}
+
+.add-attendee-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  bottom: 1.7rem;
+  min-width: 50%;
+  height: 70%;
+  background: #07b2fa;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3), 0 0 3rem 100vh rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  padding: 2rem 4rem;
+  z-index: 45;
+}
+.add-attendee-modal__header {
+  font-size: 2.5rem !important;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 3rem;
+}
+.add-attendee-modal .user-chatlist {
+  flex: 1;
+  overflow-y: scroll;
+}
+.add-attendee-modal .user-chatlist .each-row {
+  position: relative;
+}
+.add-attendee-modal .user-chatlist .each-row > input[type=checkbox] {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  border: 1px solid white;
+  transform: translateY(-50%);
+}
+.add-attendee-modal .user-chatlist .each-row > input[type=checkbox]:checked + label > .chat {
+  background: #95defd;
+}
+.add-attendee-modal .user-chatlist .chat {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 5px;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+.add-attendee-modal .user-chatlist .chat__photo {
+  margin-right: 2rem;
+}
+.add-attendee-modal .user-chatlist .chat__name {
+  font-size: 1.5rem;
+}
+.add-attendee-modal .user-chatlist .chat:hover {
+  background: #47c0f3;
+}
+.add-attendee-modal .user-chatlist > *:not(:last-child) {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #47c0f3;
+}
+.add-attendee-modal .user-chatlist::-webkit-scrollbar {
+  width: 0.7rem;
+}
+.add-attendee-modal .user-chatlist:hover::-webkit-scrollbar-thumb {
+  background: #1fadea;
+  border-radius: 99rem;
+}
+.add-attendee-modal__footer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.add-attendee-modal__close {
+  font-size: 2.7rem;
+  position: absolute;
+  right: 2rem;
+  cursor: pointer;
+  color: #6b6464;
+}
+.add-attendee-modal__close:hover {
+  color: #000;
+}
 
 .overlay {
   position: fixed;
@@ -562,6 +742,9 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 40;
   transition: all 1s;
+}
+.overlay--higher {
+  z-index: 50;
 }
 .overlay--hidden {
   display: none;
