@@ -1,0 +1,15 @@
+{
+   "name": "helomi-ui",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "compile:sass": "sass sass/main.scss styles.css -w"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "sass": "^1.32.13"
+   }
+}

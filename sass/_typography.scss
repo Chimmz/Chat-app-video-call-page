@@ -1,0 +1,13 @@
+.heading {
+   font-family: "Poppins", sans-serif;
+   color: $color-gray-darkest;
+
+   &-primary {
+      font-size: 4rem;
+      font-weight: 400;
+   }
+   &-secondary {
+      font-size: 2rem;
+      font-weight: 400;
+   }
+}

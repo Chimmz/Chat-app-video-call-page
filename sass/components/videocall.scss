@@ -1,0 +1,372 @@
+.videocall {
+   &-modal {
+      height: 92%;
+      width: 95%;
+      position: absolute;
+      @include absolute-center;
+      background: $color-white;
+      border-radius: 2rem;
+      box-shadow: 0 0 1rem 50vh rgba($color-black, 0.4);
+      z-index: 51;
+      padding: 1.7rem;
+      padding-left: 7rem;
+      display: flex;
+      justify-content: center;
+      // flex-wrap: wrap;
+      gap: 2.5rem;
+      transition: width height 0.5s;
+
+      &--fullscreen {
+         width: 100%;
+         height: 100%;
+         border-radius: 0;
+      }
+   }
+   &__tab-nav {
+      position: absolute;
+      top: 1.8rem;
+      right: 3.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: 1.8rem;
+      opacity: 0.5;
+      cursor: pointer;
+      // border: 1px solid black;
+
+      & i {
+         cursor: pointer;
+
+         &:hover {
+            color: orange;
+         }
+      }
+
+      & .tab-close {
+         font-size: 2rem;
+      }
+   }
+
+   &__chats-and-attendees {
+      flex: 1 1 35%;
+      height: 100%;
+      border-radius: 1.5rem;
+      background: $soft-blue;
+      padding: 1.5rem 2.5rem;
+      position: relative;
+
+      & .heading {
+         color: $color-gray-darkest;
+         margin-bottom: 2rem;
+      }
+   }
+   &__chats {
+      // position: relative;
+      height: 80%;
+      padding: 2rem 1rem;
+      overflow-y: scroll;
+      // border: 1px solid black;
+
+      & .newmsg {
+         // border: 1px solid black;
+         position: absolute;
+         margin: 0 auto;
+         bottom: 1rem;
+         right: 1em;
+         left: 1em;
+         right: 1em;
+         bottom: 1em;
+
+         & .input {
+            background: $color-white;
+            outline: none;
+            border: none;
+            padding: 1.4rem 1.7rem;
+            width: 100%;
+            font: inherit;
+            font-size: 1.35rem;
+            border-radius: 1rem;
+            border: 1px solid transparent;
+
+            &:focus {
+               border: 1px solid $color-gray-light;
+            }
+         }
+         & .send {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-3px, -50%);
+         }
+      }
+   }
+
+   &__attendees {
+      height: 90%;
+
+      & > * {
+         padding: 0.7em 0;
+
+         &:not(:last-child) {
+            border-bottom: 1px solid $color-primary-lightest;
+         }
+      }
+      overflow-y: scroll;
+      overflow-x: hidden;
+   }
+
+   &__attendee {
+      display: flex;
+      justify-content: space-between;
+      // border: 1px solid red;
+
+      &__details {
+         display: flex;
+         align-items: center;
+      }
+
+      & .host-actions {
+         min-height: 100%;
+         max-height: 100%;
+         display: none;
+         // border: 1px solid black;
+
+         & .btn {
+            height: 100%;
+            padding: none !important;
+         }
+      }
+
+      &__pic {
+         margin-right: 1.2em;
+      }
+
+      &__name {
+         font-size: 1.5em;
+         margin-right: auto;
+      }
+
+      &__status-in-call {
+         // border: 1px solid black;
+         display: flex;
+         align-items: center;
+
+         & > * {
+            font-size: 1.7em;
+            position: relative;
+
+            &:not(:last-child) {
+               margin-right: 1.2em;
+            }
+         }
+      }
+
+      &:hover .host-actions {
+         display: block;
+      }
+   }
+
+   &__participant {
+      display: inline-flex;
+      // width: 12rem;
+      // height: 15rem;
+      // flex: 1 0 12rem;
+      flex-direction: column;
+      position: relative;
+      // border: 1px solid red;
+
+      &__video {
+         object-fit: cover;
+         // border-radius: 7px;
+         background: rgb(49, 49, 49);
+         width: 100%;
+         height: 100%;
+      }
+      &__name {
+         font-size: 1.3rem;
+         letter-spacing: 0.2px;
+         font-weight: bold;
+         width: max-content;
+         position: absolute;
+         left: 0.5em;
+         bottom: 0.5em;
+         color: $color-white;
+         text-shadow: 0 0 5px $color-black;
+      }
+   }
+
+   // Call section (right hand side) of the page
+   &__call {
+      flex: 1 1 60%;
+      display: grid;
+      grid-gap: 4rem;
+      grid-template-rows: 1fr max-content; // allparticipants and call-controls resp
+
+      // border: 1px solid black;
+
+      &__allparticipants {
+         // border: 1px solid black;
+         // display: flex;
+         // align-items: flex-start;
+         // align-content: flex-start;
+         // gap: 1rem;
+         // flex-wrap: wrap;
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+         grid-template-rows: repeat(auto-fit, minmax(15rem, 1fr));
+         grid-auto-rows: 15rem;
+         gap: 1px;
+         overflow-y: scroll;
+         position: relative;
+         // border-radius: 1.5rem;
+      }
+
+      &--peer-to-peer .videocall__participant {
+         &--peer {
+            width: 100%;
+            height: 100%;
+            position: relative;
+         }
+         &--user {
+            position: absolute; // relative to allparticipants
+            bottom: 1rem; // 1.3rem -> fontsize of the peer's name
+            right: 1rem;
+            width: 8rem;
+            height: 8rem;
+            z-index: 3;
+
+            & video {
+               background: gray;
+               border-radius: 0.5em;
+            }
+         }
+      }
+
+      &__footer {
+         // border: 1px solid violet;
+         display: flex;
+         justify-content: space-between;
+         font-size: 2rem;
+         color: $color-gray-dark;
+         padding: 0 5px;
+      }
+
+      &__controls {
+         display: flex;
+         justify-content: center;
+         gap: 5rem;
+         flex-wrap: wrap;
+         // border: 1px solid violet;
+         // padding: 0.5rem 0;
+      }
+      &control {
+         cursor: pointer;
+         transition: all 0.2s;
+         position: relative;
+
+         &[data-label="Add new participant"] {
+            color: $color-green;
+            &:hover {
+               color: $color-primary;
+            }
+         }
+         &:nth-of-type(2) {
+            margin-left: auto;
+         }
+         &:nth-of-type(4) {
+            margin-right: auto;
+         }
+
+         &::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+            font-size: 1.2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            background: $color-white;
+            color: $color-gray-darkest;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            box-shadow: 0 0 1rem 0 rgba($color-black, 0.2);
+            visibility: hidden;
+            transition: transform 0.2s;
+         }
+         &:hover::after {
+            visibility: visible;
+            transform: translateX(-50%) translateY(-2rem);
+            opacity: 1;
+            z-index: 10;
+         }
+      }
+      &__more-actions {
+         position: relative;
+         // border: 1px solid black;
+
+         & *[class*="ellipsis"] {
+            cursor: pointer;
+            position: relative;
+            z-index: 41;
+         }
+         & .videocall__call__options {
+            font-size: 0.7em;
+            position: absolute;
+            bottom: 100%;
+            right: 100%;
+            background: $color-white;
+            z-index: 41;
+            box-shadow: 0 0 1rem 0 rgba($color-black, 0.4);
+            border-radius: 0.5rem;
+            padding: 5px 0;
+            display: none;
+            transform: scale(0.5, 0.5);
+            transition: transform 1s;
+         }
+         & .videocall__call__option {
+            display: flex;
+            width: max-content;
+            padding: 0.5em 1.5em;
+            cursor: pointer;
+
+            &:hover {
+               background: $color-gray-light;
+            }
+
+            & > *:not(:last-child) {
+               margin-right: 1em;
+            }
+         }
+
+         & input[type="checkbox"] {
+            display: none;
+
+            &:checked {
+               & + label .videocall__call__options {
+                  display: block;
+                  transform: scale(1, 1);
+               }
+            }
+         }
+      }
+   }
+}
+
+.is-muted {
+   color: $color-red;
+   position: relative;
+
+   &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 50%;
+      width: 2px;
+      height: 100%;
+      background: $color-red;
+      // transform-origin: top right;
+      transform: rotate(45deg) translateX(50%) scaleY(1.5);
+   }
+}

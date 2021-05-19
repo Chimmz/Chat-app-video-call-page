@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="styles.css" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400&display=swap"
+         rel="stylesheet"
+      />
+      <link
+         rel="stylesheet"
+         href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+         integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+         crossorigin="anonymous"
+      />
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="root">
+         <nav class="navbar">
+            <a>
+               <img src="img/helomi-logox2.png" alt="" class="navbar__logo" />
+            </a>
+            <div class="navbar__links remove-bullets">
+               <a class="navbar__link">
+                  <span class="navbar__link__label"></span>
+               </a>
+            </div>
+         </nav>
+
+         <div class="videocall-modal">
+            <!-- <div class="videocall__tab-nav">
+               <i class="fas fa-expand-arrows-alt screen-size"></i>
+               <i class="fas fa-compress-arrows-alt"></i>
+               <i class="fas fa-times"></i>
+            </div> -->
+            <div class="videocall__chats-and-attendees">
+               <h1 class="heading">Group Chat</h1>
+
+               <!-- <div class="videocall__chats">
+                  <div class="videocall-msg textmsg--incoming">
+                     <img
+                        src="img/faces3.jpg"
+                        alt=""
+                        class="videocall-msg__sender-photo pic pic--xsm"
+                     />
+                     <div class="videocall-msg__sender-name">Mary Smith</div>
+                     <p class="videocall-msg__content">
+                        Hello all. We're all welcome to this conference call.
+                        Hello all. We're all welcome to this conference call
+                     </p>
+                  </div>
+                  <div class="videocall-msg textmsg--incoming">
+                     <img
+                        src="img/faces3.jpg"
+                        alt=""
+                        class="videocall-msg__sender-photo pic pic--xsm"
+                     />
+                     <div class="videocall-msg__sender-name">Mary Smith</div>
+                     <p class="videocall-msg__content">Hello all</p>
+                  </div>
+               </div> -->
+               <ul class="videocall__attendees remove-bullets">
+                  <li class="videocall__attendee">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+                  <li class="videocall__attendee remove-bullets">
+                     <div class="videocall__attendee__details">
+                        <img
+                           src="img/face2.jpg"
+                           alt=""
+                           class="videocall__attendee__pic pic pic--xsm"
+                        />
+                        <span class="videocall__attendee__name"
+                           >Stella Brown</span
+                        >
+                     </div>
+                     <div class="host-actions">
+                        <button class="btn btn-primary">Unmute</button>
+                     </div>
+                     <div class="videocall__attendee__status-in-call">
+                        <span class="is-muted" data-label="Mute audio"
+                           ><i class="fas fa-microphone"></i
+                        ></span>
+                        <span class="is-muted" data-label="Stop video"
+                           ><i class="fas fa-video"></i
+                        ></span>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+
+            <!-- For peer to peer call -->
+            <div class="videocall__call videocall__call--peer-to-peer">
+               <div class="videocall__call__allparticipants">
+                  <div
+                     class="videocall__participant videocall__participant--peer"
+                  >
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name"
+                        >Mary Smith</span
+                     >
+                  </div>
+                  <div
+                     class="videocall__participant videocall__participant--user"
+                  >
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                  </div>
+               </div>
+
+               <div class="videocall__call__footer">
+                  <div class="videocall__options">
+                     <span
+                        class="videocall__callcontrol"
+                        data-label="Add new participant"
+                        ><i class="fas fa-user-plus"></i
+                     ></span>
+                  </div>
+
+                  <div class="videocall__call__controls">
+                     <span
+                        class="
+                           videocall__callcontrol videocall__callcontrol
+                           is-muted
+                        "
+                        data-label="Mute audio"
+                        ><i class="fas fa-microphone"></i
+                     ></span>
+                     <span
+                        class="videocall__callcontrol"
+                        data-label="Stop video"
+                        ><i class="fas fa-video"></i
+                     ></span>
+                     <span
+                        class="videocall__callcontrol"
+                        data-label="Mute speaker"
+                        ><i class="fas fa-volume-up"></i
+                     ></span>
+                  </div>
+
+                  <div class="videocall__call__more-actions">
+                     <input type="checkbox" id="more-actions" />
+                     <label for="more-actions">
+                        <span><i class="fas fa-ellipsis-v"></i></span>
+                        <ul class="videocall__call__options remove-bullets">
+                           <li class="videocall__call__option">
+                              <i
+                                 class="fas fa-expand-arrows-alt screen-size"
+                              ></i>
+                              <span>Zoom to full screen</span>
+                           </li>
+                           <!-- <li class="videocall__call__option">
+                              <i
+                                 class="fas fa-expand-arrows-alt screen-size"
+                              ></i>
+                              <span>Zoom to full screen</span>
+                           </li>
+                           <li class="videocall__call__option">
+                              <i
+                                 class="fas fa-expand-arrows-alt screen-size"
+                              ></i>
+                              <span>Zoom to full screen</span>
+                           </li> -->
+                        </ul>
+                     </label>
+                     <!-- <div class="overlay overlay--transparent"></div> -->
+                  </div>
+               </div>
+            </div>
+
+            <!-- For conference call -->
+            <!-- <div class="videocall__call videocall__call--conference">
+               <div class="videocall__call__allparticipants">
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+                  <div class="videocall__participant">
+                     <video
+                        src=""
+                        class="videocall__participant__video"
+                     ></video>
+                     <span class="videocall__participant__name">
+                        Rachel Brandley
+                     </span>
+                  </div>
+               </div>
+
+               <div class="videocall__call-controls">
+                  <span
+                     class="videocall__call-control"
+                     data-label="Add participant"
+                     ><i class="fas fa-user-plus"></i
+                  ></span>
+                  <span class="videocall__call-control" data-label="Mute audio"
+                     ><i class="fas fa-microphone"></i
+                  ></span>
+                  <span class="videocall__call-control" data-label="Stop video"
+                     ><i class="fas fa-video"></i
+                  ></span>
+                  <span
+                     class="videocall__call-control videocall__control--muted"
+                     data-label="Mute speaker"
+                     ><i class="fas fa-volume-up"></i></span
+                  ><span
+                     class="videocall__call-control"
+                     data-label="Unmute speaker"
+                     ><i class="fas fa-volume-mute"></i
+                  ></span>
+               </div>
+            </div> -->
+         </div>
+         <!-- <div class="overlay"></div> -->
+      </div>
+   </body>
+</html>
+<!-- <span><i class="fas fa-ellipsis-v"></i></span> -->

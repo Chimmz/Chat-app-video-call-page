@@ -1,0 +1,58 @@
+.textmsg {
+   font-size: 1.15em;
+   width: max-content;
+   max-width: 60ch;
+   background-color: $color-white;
+   border-radius: 1rem;
+   margin-bottom: 0.5rem;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+
+   &__content {
+      padding: 0.65rem 1.2rem;
+      padding-bottom: 0;
+      font-size: 1.11em;
+      font-weight: 400;
+   }
+   &__time {
+      width: max-content;
+      align-self: flex-end;
+      color: $color-gray-dark;
+      font-size: 0.9em;
+      margin: 5px 1.5rem 5px 0;
+   }
+
+   &--incoming {
+      background: $color-white;
+      color: $color-gray-darkest;
+      border-top-left-radius: 0.2rem;
+
+      & .textmsg__time {
+         margin: 3px 1.5rem 3px 1.5rem;
+      }
+   }
+   &--outgoing {
+      margin-left: auto;
+      background: $color-primary;
+      color: $color-white;
+      border-bottom-right-radius: 0.2rem;
+
+      & .textmsg__time {
+         color: rgba($color-white, 0.9);
+         margin-left: 1.5rem;
+      }
+   }
+
+   &--not-sent {
+      background: $color-primary-lighter;
+
+      & .textmsg__err-msg {
+         position: absolute;
+         right: 0;
+         bottom: -1.5rem;
+         color: $color-black;
+         color: $color-red;
+      }
+   }
+}
